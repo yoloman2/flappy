@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# link this by running `ln -fs ../../pre-commit .git/hooks/pre-commit`
+
+# poor man's JSON site API:
+# cp harp.json public/json
+
+# nice if you use different surge accounts
+# add email and password to .auth and add .auth to .gitignore
+surge logout
+cat .auth | surge login
+
+harp compile
+[ $? -ne 0 ] && exit 1
+
+surge www
+[ $? -ne 0 ] && exit 1
+exit 0
