@@ -5,10 +5,13 @@
 # poor man's JSON site API:
 # cp harp.json public/json
 
-# nice if you use different surge accounts
-# add email and password to .auth and add .auth to .gitignore
-surge logout
-cat .auth | surge login
+# nice if you use different surge accounts (work, play, etc.)
+# USE WITH CAUTION AND ONLY ON SECURED SYSTEMS
+# add email and password to .auth ENSURE .auth IS IN .gitignore
+if [ -e .auth ]; then
+  surge logout
+  cat .auth | surge login
+fi
 
 harp compile
 [ $? -ne 0 ] && exit 1
