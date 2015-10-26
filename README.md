@@ -1,4 +1,4 @@
-# HTML5-PHSC Flappy Game Template
+# Flappy Game Template (HTML5-PHSC)
 
 Use this template to assemble your own game like Flappy Bird. Then, as
 you learn more code, customize it to your liking.
