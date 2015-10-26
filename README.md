@@ -1,7 +1,7 @@
-# HTML5 Flappy Game Template (PHSC)
+# HTML5-PHSC Flappy Game Template
 
 Use this template to assemble your own game like Flappy Bird. Then, as
-you learn more code, customize it to your liking. Here's how:
+you learn more code, customize it to your liking.
 
 ## Fork
 
@@ -25,7 +25,7 @@ create the art in the proper dimensions, which you can find in the
 directory. [PiskelApp.com][] is a great tool to create your game
 art.
 
-## Using the HTML5 PHSC Stack
+## Using the HTML5-PHSC Stack
 
 What is HTML5? It is the modern language used to create web pages
 including those with moving parts and games. If you have heard of
