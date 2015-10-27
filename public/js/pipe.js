@@ -5,9 +5,6 @@
 var Pipe = function (game, offset, space) {
   Phaser.Group.call(this, game);
 
-  this.enableBody = true;
-  this.physicsBodyType = Phaser.Physics.ARCADE;
-
   this.offset = offset || 120;
 
   space = space || 160;
@@ -29,12 +26,13 @@ var Pipe = function (game, offset, space) {
 
   this.top = game.add.sprite(x, y - (space/2) , pipetop); 
   this.bot = game.add.sprite(x, 0 + (space/2), pipebot); 
+  game.physics.arcade.enableBody(this.top);
+  game.physics.arcade.enableBody(this.bot);
   this.add(this.top);
   this.add(this.bot);
   this.x = game.world.width + pipetop.width;
   this.randomY();
   this.setAll('body.velocity.x', -100);
-  this.dieAt = -game.world.width - (2*pipetop.width);
 };
 
 Pipe.prototype = Object.create(Phaser.Group.prototype);
