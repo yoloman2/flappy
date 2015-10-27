@@ -1,7 +1,9 @@
 // Sprite: Flapper
 
-var Flapper = function(game,x,y) {
-  Phaser.Sprite.call(this, game, x, y, 'flappy');
+'use strict';
+
+var Flapper = function(game) {
+  Phaser.Sprite.call(this, game, 20, 234, 'flappy');
   this.smoothed = false;
   this.scale.set(1.5);
   //this.animations.add('fly', [0,1,2], 10, true);
@@ -9,9 +11,9 @@ var Flapper = function(game,x,y) {
   game.physics.arcade.enable(this);
   this.body.gravity.y = 1200;
   this.body.collideWorldBounds = true;
-  game.add.existing(this);
   game.input.onDown.add(this.flap, this);
   game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR).onDown.add(this.flap, this);
+  game.add.existing(this);
 };
 
 Flapper.prototype = Object.create(Phaser.Sprite.prototype);
