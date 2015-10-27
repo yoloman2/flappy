@@ -1,7 +1,6 @@
 // State: Flappy.Play
 
-//var Flappy = Flappy || {};
-var Flappy = {};
+var Flappy = Flappy || {};
 
 Flappy.Play = function (game) {
   this.flappy = null;
@@ -9,11 +8,6 @@ Flappy.Play = function (game) {
 };
 
 Flappy.Play.prototype = {
-
-  init: function () {
-    this.game.renderer.renderSession.roundPixels = true;
-    this.physics.startSystem(Phaser.Physics.ARCADE);
-  },
 
   preload: function () {
     this.load.image("background","assets/background.png");
