@@ -2,37 +2,40 @@
 
 'use strict';
 
-var Pipe = function (game, offset, space) {
-  Phaser.Group.call(this, game);
+var Pipe = function (game, x, y, parent, offset, space) {
+  Phaser.Group.call(this, game, parent);
 
   this.offset = offset || 120;
-
-  space = space || 160;
-
-  var pipetop;
-  var pipebot;
+  this.space = space || 170;
 
   if (game.cache.checkImageKey('pipetop')) {
-    pipetop = 'pipetop';
-    pipebot = 'pipebot';
+    this.topimg = 'pipetop';
+    this.botimg = 'pipebot';
   } else {
-    pipetop = this.drawOne();
-    pipebot = this.drawOne();
-  
+    this.topimg = this.drawOne();
+    this.botimg = this.drawOne();
   }
 
-  var x = -(pipetop.width/2);
-  var y = -(pipetop.height);
+  this.dieAt = -game.world.width - (this.topimg.width*2);
 
-  this.top = game.add.sprite(x, y - (space/2) , pipetop); 
-  this.bot = game.add.sprite(x, 0 + (space/2), pipebot); 
+  //var _x = -(this.topimg.width/2);
+  //var _y = -(this.topimg.height);
+
+  //this.top = game.add.sprite(_x, _y - (this.space/2) , this.topimg); 
+  //this.bot = game.add.sprite(_x, this.space/2, this.botimg); 
+  this.top = game.add.sprite(0,0,this.topimg);
+  this.bot = game.add.sprite(0,0,this.topimg);
+
   game.physics.arcade.enableBody(this.top);
   game.physics.arcade.enableBody(this.bot);
+
   this.add(this.top);
   this.add(this.bot);
-  this.x = game.world.width + pipetop.width;
-  this.randomY();
-  this.setAll('body.velocity.x', -100);
+
+  //this.x = x || game.world.width + this.width;
+  //this.y = y || this.randomY();
+  //this.setAll('body.velocity.x', -100);
+  this.reset();
 };
 
 Pipe.prototype = Object.create(Phaser.Group.prototype);
@@ -48,11 +51,23 @@ Pipe.prototype.drawOne = function (width, height) {
 
 Pipe.prototype.randomY = function () {
   var offset = game.rnd.integerInRange(-this.offset, this.offset);
-  this.y = game.world.height/2 + offset;
+  return game.world.height/2 + offset;
 };
 
 Pipe.prototype.update = function () {
   if (this.top.x <= this.dieAt) {
-    this.destroy();
+    this.exists = false;
   }
+};
+
+Pipe.prototype.reset = function (x,y) {
+  var _x = -(this.topimg.width/2);
+  var _y = -(this.topimg.height);
+  this.top.reset(_x, _y - (this.space/2));
+  this.bot.reset(_x, this.space/2);
+  this.x = x || game.world.width + this.width;
+  this.y = y || this.randomY();
+  this.setAll('body.velocity.x', -100);
+  this.exists = true;
+  this.scored = false;
 };

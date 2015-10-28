@@ -3,9 +3,10 @@
 'use strict';
 
 var Flapper = function(game) {
-  Phaser.Sprite.call(this, game, 20, 234, 'flappy');
+  Phaser.Sprite.call(this, game, 40, 234, 'flappy');
   this.smoothed = false;
-  this.scale.set(1.5);
+  this.scale.set(1.3);
+  this.anchor.setTo(0.5,0.5);
   //this.animations.add('fly', [0,1,2], 10, true);
   //this.play('fly');
   game.physics.arcade.enable(this);
@@ -18,5 +19,14 @@ var Flapper = function(game) {
 
 Flapper.prototype = Object.create(Phaser.Sprite.prototype);
 Flapper.prototype.constructor = Flapper;
-Flapper.prototype.flap = function () { this.body.velocity.y = -400; }
 
+Flapper.prototype.flap = function () {
+  this.body.velocity.y = -400;
+  this.game.add.tween(this).to({angle: -40}, 100).start();
+};
+
+Flapper.prototype.update = function () {
+  if (this.angle < 90) {
+    this.angle += 2.5;
+  }
+};
