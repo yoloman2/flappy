@@ -4,13 +4,15 @@
 
 var Flappy = Flappy || {};
 
-Flappy.Start = function () {
-  this.background = null;
-  this.flappy = null;
-  this.button = null;
-};
+Flappy.Start = function () {};
 
 Flappy.Start.prototype = {
+
+  init: function () {
+    this.background = null;
+    this.flappy = null;
+    this.button = null;
+  },
 
   preload: function () {
     this.load.image("background","assets/background.png");

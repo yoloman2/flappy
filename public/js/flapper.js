@@ -15,7 +15,7 @@ var Flapper = function(game) {
   this.body.gravity.y = 1200;
   game.input.onDown.add(this.flap, this);
   game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR).onDown.add(this.flap, this);
-  this.events.onKilled.add(this.restart,this);
+  this.events.onKilled.add(this.end,this);
   game.add.existing(this);
 };
 
@@ -33,7 +33,7 @@ Flapper.prototype.update = function () {
   }
 };
 
-Flapper.prototype.restart = function () {
-  this.game.state.start('start');
+Flapper.prototype.end = function () {
+  this.game.state.start('end');
 };
 

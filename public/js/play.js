@@ -4,16 +4,18 @@
 
 var Flappy = Flappy || {};
 
-Flappy.Play = function () {
-  this.background = null;
-  this.flappy = null;
-  this.pipes = null;
-  this.timer = null;
-  this.score = -1; 
-  this.scoreText = null;
-};
+Flappy.Play = function () {};
 
 Flappy.Play.prototype = {
+
+  init: function () {
+    this.background = null;
+    this.flappy = null;
+    this.pipes = null;
+    this.timer = null;
+    this.score = -1; 
+    this.scoreText = null;
+  },
 
   preload: function () {
     this.load.image("background","assets/background.png");
@@ -28,7 +30,7 @@ Flappy.Play.prototype = {
     this.flappy = new Flapper(this.game);
     this.timer = this.game.time.events.loop(2500, this.addPipe, this);           
     var scoreTextStyle = { font: "30px sans-serif", fill: "rgba(0,255,0,1)" }; 
-    this.scoreText = this.game.add.text(this.game.world.width/2, -1, "0", scoreTextStyle);
+    this.scoreText = this.game.add.text(this.game.world.centerX, -1, "0", scoreTextStyle);
     this.pipes = this.game.add.group();
   },
 
@@ -47,14 +49,12 @@ Flappy.Play.prototype = {
 
   update: function () {
     this.pipes.forEach(function (pipe) {
-      this.game.physics.arcade.collide(this.flappy, pipe, this.restart, null, this);  
+      this.game.physics.arcade.collide(this.flappy, pipe, this.end, null, this);  
     }, this);
   },
 
-  restart: function () {
-    this.score = -1;
-    this.scoreText.text = 0;
-    this.game.state.start('start');
+  end: function () {
+    this.game.state.start('end');
   }
 
 };
