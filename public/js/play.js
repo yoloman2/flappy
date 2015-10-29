@@ -54,7 +54,7 @@ Flappy.Play.prototype = {
   restart: function () {
     this.score = -1;
     this.scoreText.text = 0;
-    this.game.state.start('play');
+    this.game.state.start('start');
   }
 
 };

@@ -10,9 +10,11 @@ html
     script(src="js/phaser.js")
     script(src="js/flapper.js")
     script(src="js/pipe.js")
+    script(src="js/start.js")
     script(src="js/play.js")
     script.
       var game = new Phaser.Game(320,568); 
+      game.state.add('start',Flappy.Start);
       game.state.add('play',Flappy.Play);
-      game.state.start('play');
+      game.state.start('start');
 
