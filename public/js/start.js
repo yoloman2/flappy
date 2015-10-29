@@ -15,7 +15,7 @@ Flappy.Start.prototype = {
   },
 
   preload: function () {
-    this.load.image('background','assets/background.png');
+    this.load.spritesheet('background','assets/background.png',1352,568);
     this.load.spritesheet('flappy','assets/flappy.png',32,32);
     this.load.image('sign','assets/sign.png');
     this.load.image('button','assets/button.png');
@@ -28,6 +28,8 @@ Flappy.Start.prototype = {
 
     this.background = this.add.tileSprite(0,0,320,568,"background");
     this.background.autoScroll(-50,0);
+    this.background.animations.add('bganim');
+    this.background.animations.play('bganim',20,true);
 
     this.button = this.game.add.button(this.game.world.centerX, this.game.world.centerY+100,"button", this.start, this);
     this.button.anchor.set(0.5,0.5);

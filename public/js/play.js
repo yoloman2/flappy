@@ -18,7 +18,7 @@ Flappy.Play.prototype = {
   },
 
   preload: function () {
-    this.load.image('background','assets/background.png');
+    this.load.spritesheet('background','assets/background.png',1352,568);
     this.load.spritesheet('flappy','assets/flappy.png',32,32);
     this.load.image('pipetop','assets/pipetop.gif');
     this.load.image('pipebot','assets/pipebot.gif');
