@@ -15,14 +15,16 @@ var Flapper = function(game) {
   this.body.gravity.y = 1200;
   game.input.onDown.add(this.flap, this);
   game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR).onDown.add(this.flap, this);
-  this.events.onKilled.add(this.end,this);
+  this.flapSound = this.game.add.audio('flap');
   game.add.existing(this);
 };
+
 
 Flapper.prototype = Object.create(Phaser.Sprite.prototype);
 Flapper.prototype.constructor = Flapper;
 
 Flapper.prototype.flap = function () {
+  this.flapSound.play();
   this.body.velocity.y = -400;
   this.game.add.tween(this).to({angle: -40}, 100).start();
 };
@@ -32,8 +34,3 @@ Flapper.prototype.update = function () {
     this.angle += 2.5;
   }
 };
-
-Flapper.prototype.end = function () {
-  this.game.state.start('end');
-};
-

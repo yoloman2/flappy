@@ -18,13 +18,21 @@ Flappy.Play.prototype = {
   },
 
   preload: function () {
-    this.load.image("background","assets/background.png");
-    this.load.spritesheet("flappy","assets/flappy.png",32,32);
-    this.load.image("pipetop","assets/pipetop.gif");
-    this.load.image("pipebot","assets/pipebot.gif");
+    this.load.image('background','assets/background.png');
+    this.load.spritesheet('flappy','assets/flappy.png',32,32);
+    this.load.image('pipetop','assets/pipetop.gif');
+    this.load.image('pipebot','assets/pipebot.gif');
+    this.load.audio('flap', 'assets/flap.wav');
+    this.load.audio('point', 'assets/point.wav');
+    this.load.audio('crash', 'assets/crash.wav');
+    this.load.audio('play', 'assets/play.mp3');
   },
 
   create: function () {
+    this.playMusic = this.game.add.audio('play');
+    this.pointSound = this.game.add.audio('point');
+    this.crashSound = this.game.add.audio('crash');
+    this.playMusic.play();
     this.background = this.add.tileSprite(0,0,320,568,"background");
     this.background.autoScroll(-50,0);
     this.flappy = new Flapper(this.game);
@@ -45,15 +53,19 @@ Flappy.Play.prototype = {
     }
     this.score += 1;
     this.scoreText.text = this.score;
+    if (this.score > 0) this.pointSound.play();
   },
 
   update: function () {
     this.pipes.forEach(function (pipe) {
       this.game.physics.arcade.collide(this.flappy, pipe, this.end, null, this);  
     }, this);
+    if (!this.flappy.alive) this.end();
   },
 
   end: function () {
+    this.crashSound.play();
+    this.playMusic.stop();
     this.game.state.start('end');
   }
 

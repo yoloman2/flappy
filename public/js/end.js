@@ -8,6 +8,10 @@ Flappy.End = function () {};
 
 Flappy.End.prototype = {
 
+  preload: function () {
+    this.load.audio('gameover', 'assets/gameover.wav');
+  },
+
   create: function () {
     var gameoverStyle = { font: "100px sans-serif", fill: "rgba(0,255,0,1)", align: "center" }; 
     this.gameover = this.game.add.text(this.game.world.centerX, this.game.world.centerY - 150, "Game\nOver", gameoverStyle);
@@ -18,9 +22,12 @@ Flappy.End.prototype = {
     this.scoretext.anchor.set(0.5,0.5);
     game.input.onDown.add(this.start, this);
     game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR).onDown.add(this.start, this);
+    this.gameoverSound = this.game.add.audio('gameover');
+    this.gameoverSound.play();
   },
 
   start: function () {
+    this.gameoverSound.stop();
     this.game.state.start('start');
   }
 
