@@ -14,14 +14,6 @@ Flappy.Start.prototype = {
     this.button = null;
   },
 
-  preload: function () {
-    this.load.spritesheet('background','assets/background.png',1352,568);
-    this.load.spritesheet('flappy','assets/flappy.png',32,32);
-    this.load.image('sign','assets/sign.png');
-    this.load.image('button','assets/button.png');
-    this.load.audio('start','assets/start.mp3');
-  },
-
   create: function () {
     this.startSound = this.game.add.audio('start');
     this.startSound.play();

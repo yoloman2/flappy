@@ -17,24 +17,17 @@ Flappy.Play.prototype = {
     this.scoreText = null;
   },
 
-  preload: function () {
-    this.load.spritesheet('background','assets/background.png',1352,568);
-    this.load.spritesheet('flappy','assets/flappy.png',32,32);
-    this.load.image('pipetop','assets/pipetop.gif');
-    this.load.image('pipebot','assets/pipebot.gif');
-    this.load.audio('flap', 'assets/flap.wav');
-    this.load.audio('point', 'assets/point.wav');
-    this.load.audio('crash', 'assets/crash.wav');
-    this.load.audio('play', 'assets/play.mp3');
-  },
-
   create: function () {
     this.playMusic = this.game.add.audio('play');
     this.pointSound = this.game.add.audio('point');
     this.crashSound = this.game.add.audio('crash');
     this.playMusic.play();
+
     this.background = this.add.tileSprite(0,0,320,568,"background");
     this.background.autoScroll(-50,0);
+    this.background.animations.add('bganim');
+    this.background.animations.play('bganim',20,true);
+
     this.flappy = new Flapper(this.game);
     this.timer = this.game.time.events.loop(2500, this.addPipe, this);           
     var scoreTextStyle = { font: "30px sans-serif", fill: "rgba(0,255,0,1)" }; 

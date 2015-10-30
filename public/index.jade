@@ -8,15 +8,22 @@ html
     title Flappy SkilStak
   body
     script(src="js/phaser.js")
+
     script(src="js/flapper.js")
     script(src="js/pipe.js")
+
+    script(src="js/boot.js")
+    script(src="js/preload.js")
     script(src="js/start.js")
     script(src="js/play.js")
     script(src="js/end.js")
+    
     script.
       var game = new Phaser.Game(320,568); 
+      game.state.add('boot',Flappy.Boot);
+      game.state.add('preload',Flappy.Preload);
       game.state.add('start',Flappy.Start);
       game.state.add('play',Flappy.Play);
       game.state.add('end',Flappy.End);
-      game.state.start('start');
+      game.state.start('boot');
 
