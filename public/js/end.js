@@ -15,7 +15,7 @@ Flappy.End.prototype = {
     this.logo.play('blink',2,true);
 
     var gameoverStyle = { font: "100px sans-serif", fill: "#b58900", align: "center" }; 
-    this.gameover = this.game.add.text(this.game.world.centerX, this.game.world.centerY - 150, "GAME\nOVER", gameoverStyle);
+    this.gameover = this.game.add.text(this.game.world.centerX, this.game.world.centerY - 150, "game\nover", gameoverStyle);
     this.gameover.anchor.set(0.5,0.5);
     var score = this.game.state.states.play.score;
     if (score < 0) {score = 0};
