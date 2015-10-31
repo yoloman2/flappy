@@ -7,7 +7,7 @@ var Flapper = function(game) {
   this.smoothed = false;
   this.checkWorldBounds = true;
   this.outOfBoundsKill = true;
-  this.scale.set(0.8);
+  this.scale.set(1);
   this.anchor.set(0.5);
   game.physics.arcade.enable(this);
   this.body.gravity.y = 1200;
@@ -23,7 +23,7 @@ Flapper.prototype.constructor = Flapper;
 
 Flapper.prototype.flap = function () {
   this.flapSound.play();
-  this.body.velocity.y = -400;
+  this.body.velocity.y = -420;
   this.frame = 0;
   this.game.add.tween(this).to({angle: -40}, 100).start();
 };

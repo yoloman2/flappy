@@ -18,11 +18,6 @@ var Pipe = function (game, x, y, parent, offset, space) {
 
   this.dieAt = -game.world.width - (this.topimg.width*2);
 
-  //var _x = -(this.topimg.width/2);
-  //var _y = -(this.topimg.height);
-
-  //this.top = game.add.sprite(_x, _y - (this.space/2) , this.topimg); 
-  //this.bot = game.add.sprite(_x, this.space/2, this.botimg); 
   this.top = game.add.sprite(0,0,this.topimg);
   this.bot = game.add.sprite(0,0,this.topimg);
 
@@ -32,9 +27,6 @@ var Pipe = function (game, x, y, parent, offset, space) {
   this.add(this.top);
   this.add(this.bot);
 
-  //this.x = x || game.world.width + this.width;
-  //this.y = y || this.randomY();
-  //this.setAll('body.velocity.x', -100);
   this.reset();
 };
 
@@ -42,9 +34,10 @@ Pipe.prototype = Object.create(Phaser.Group.prototype);
 Pipe.prototype.constructor = Pipe;
 
 Pipe.prototype.drawOne = function (width, height) {
-  width = width || 65;
+  width = width || 80;
   height = height || 500;
   var one = this.game.add.bitmapData(width,height);
+  one.ctx.fillStyle = '#586e75';
   one.ctx.fillRect(0,0,width,height);
   return one;
 };
@@ -67,7 +60,7 @@ Pipe.prototype.reset = function (x,y) {
   this.bot.reset(_x, this.space/2);
   this.x = x || game.world.width + this.width;
   this.y = y || this.randomY();
-  this.setAll('body.velocity.x', -100);
+  this.setAll('body.velocity.x', -120);
   this.exists = true;
   this.scored = false;
 };

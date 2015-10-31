@@ -18,20 +18,27 @@ Flappy.Play.prototype = {
   },
 
   create: function () {
-    this.playMusic = this.game.add.audio('play');
-    this.pointSound = this.game.add.audio('point');
-    this.crashSound = this.game.add.audio('crash');
-    this.playMusic.play();
-
     this.background = this.add.tileSprite(0,0,320,568,"background");
     this.background.autoScroll(-50,0);
-    this.background.animations.add('bganim');
-    this.background.animations.play('bganim',20,true);
 
+    this.playMusic = this.game.add.audio('play',0.7,true);
+    this.pointSound = this.game.add.audio('point');
+    this.crashSound = this.game.add.audio('crash');
+    var sounds = [
+      this.playMusic,
+      this.pointSound,
+      this.crashSound
+    ];
+    game.sound.setDecodedCallback(sounds, this.start, this);
+  },
+
+  start: function () {
+    this.playMusic.play();
     this.flappy = new Flapper(this.game);
     this.timer = this.game.time.events.loop(2500, this.addPipe, this);           
-    var scoreTextStyle = { font: "30px sans-serif", fill: "rgba(0,255,0,1)" }; 
-    this.scoreText = this.game.add.text(this.game.world.centerX, -1, "0", scoreTextStyle);
+    var scoreTextStyle = { font: "80px sans-serif", fill: "#fdf6e3" }; 
+    this.scoreText = this.game.add.text(this.game.world.centerX, 55, "0", scoreTextStyle);
+    this.scoreText.anchor.set(0.5);
     this.pipes = this.game.add.group();
   },
 
@@ -40,6 +47,7 @@ Flappy.Play.prototype = {
     if (this.pipes.length < 3) {
       pipe = new Pipe(this.game);
       this.pipes.add(pipe);
+      this.scoreText.bringToTop();
     } else {
       pipe = this.pipes.getFirstExists(false);
       pipe.reset();
