@@ -34,7 +34,7 @@ Pipe.prototype = Object.create(Phaser.Group.prototype);
 Pipe.prototype.constructor = Pipe;
 
 Pipe.prototype.drawOne = function (width, height) {
-  width = width || 80;
+  width = width || 90;
   height = height || 500;
   var one = this.game.add.bitmapData(width,height);
   one.ctx.fillStyle = '#586e75';

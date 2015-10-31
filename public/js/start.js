@@ -26,7 +26,6 @@ Flappy.Start.prototype = {
 
     this.sign = this.game.add.sprite(this.game.world.centerX, this.game.world.height/4,'sign');
     this.sign.anchor.set(0.5);
-    this.sign.scale.set(1.5);
 
     this.game.add.tween(this.sign).to({y:this.sign.y+50},474, Phaser.Easing.Linear.NONE,true,0,2000,true);
   },
