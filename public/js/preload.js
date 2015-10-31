@@ -17,7 +17,8 @@ Flappy.Preload.prototype = {
     this.load.spritesheet('sign','assets/sign.png',46,64);
 
     this.load.image('button','assets/button.png');
-    this.load.image('pipetop','assets/pipetop.gif');
+    this.load.image('pipetop','assets/pipetop.png');
+    this.load.image('pipebot','assets/pipebot.png');
 
     this.load.audio('start','assets/start.mp3');
     this.load.audio('flap', 'assets/flap.wav');
@@ -29,6 +30,17 @@ Flappy.Preload.prototype = {
   },
 
   create: function () {
+    var start = this.game.add.audio('start');
+    var flap = this.game.add.audio('flap');
+    var play = this.game.add.audio('play',0.7,true);
+    var point = this.game.add.audio('point');
+    var crash = this.game.add.audio('crash');
+    var gameover = this.game.add.audio('gameover');
+    var sounds = [start,flap,play,point,crash,gameover];
+    game.sound.setDecodedCallback(sounds, this.start, this);
+  },
+
+  start: function () {
     this.game.state.start('start');
   }
 

@@ -19,7 +19,7 @@ var Pipe = function (game, x, y, parent, offset, space) {
   this.dieAt = -game.world.width - (this.topimg.width*2);
 
   this.top = game.add.sprite(0,0,this.topimg);
-  this.bot = game.add.sprite(0,0,this.topimg);
+  this.bot = game.add.sprite(0,0,this.botimg);
 
   game.physics.arcade.enableBody(this.top);
   game.physics.arcade.enableBody(this.bot);

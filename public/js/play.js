@@ -20,19 +20,9 @@ Flappy.Play.prototype = {
   create: function () {
     this.background = this.add.tileSprite(0,0,320,568,"background");
     this.background.autoScroll(-50,0);
-
-    this.playMusic = this.game.add.audio('play',0.7,true);
+    this.playMusic = this.game.add.audio('play');
     this.pointSound = this.game.add.audio('point');
     this.crashSound = this.game.add.audio('crash');
-    var sounds = [
-      this.playMusic,
-      this.pointSound,
-      this.crashSound
-    ];
-    game.sound.setDecodedCallback(sounds, this.start, this);
-  },
-
-  start: function () {
     this.playMusic.play();
     this.flappy = new Flapper(this.game);
     this.timer = this.game.time.events.loop(2500, this.addPipe, this);           
@@ -69,9 +59,6 @@ Flappy.Play.prototype = {
     this.playMusic.stop();
     this.game.state.start('end');
   },
-
-  render: function () {
-  }
 
 };
 
