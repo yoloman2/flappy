@@ -12,13 +12,13 @@ Flappy.Boot.prototype = {
 
   init: function () {
     console.log("%c~~~ Booting the Flap ~~~\n Compliments of SkilStak", "color:#fdf6e3; background:#073642");
-    //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-    //this.scale.pageAlignHorizontally = true;
-    //this.scale.pageAlignVertically = true;
+    this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    this.scale.pageAlignHorizontally = true;
+    this.scale.pageAlignVertically = true;
   },
 
   preload: function () {
-    this.game.load.spritesheet('logo','assets/logo.png',80,80);
+    this.game.load.spritesheet('logo','assets/logo.png',46,64);
   },
 
   create: function () {

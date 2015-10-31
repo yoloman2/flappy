@@ -60,6 +60,9 @@ Flappy.Play.prototype = {
     this.crashSound.play();
     this.playMusic.stop();
     this.game.state.start('end');
+  },
+
+  render: function () {
   }
 
 };

@@ -3,14 +3,12 @@
 'use strict';
 
 var Flapper = function(game) {
-  Phaser.Sprite.call(this, game, 40, 234, 'flappy');
+  Phaser.Sprite.call(this, game, 60, 234, 'flappy',1);
   this.smoothed = false;
   this.checkWorldBounds = true;
   this.outOfBoundsKill = true;
-  this.scale.set(1.3);
-  this.anchor.setTo(0.5,0.5);
-  //this.animations.add('fly', [0,1,2], 10, true);
-  //this.play('fly');
+  this.scale.set(0.8);
+  this.anchor.set(0.5);
   game.physics.arcade.enable(this);
   this.body.gravity.y = 1200;
   game.input.onDown.add(this.flap, this);
@@ -26,11 +24,17 @@ Flapper.prototype.constructor = Flapper;
 Flapper.prototype.flap = function () {
   this.flapSound.play();
   this.body.velocity.y = -400;
+  this.frame = 0;
   this.game.add.tween(this).to({angle: -40}, 100).start();
 };
 
 Flapper.prototype.update = function () {
   if (this.angle < 90) {
     this.angle += 2.5;
+  }
+  if (this.angle < 0 && this.angle > -90) {
+    this.frame = 0;
+  } else {
+    this.frame = 1;
   }
 };

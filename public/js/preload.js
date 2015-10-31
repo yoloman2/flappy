@@ -15,9 +15,9 @@ Flappy.Preload.prototype = {
     this.logo.play('blink',2,true);
 
     this.load.spritesheet('background','assets/background.png',1352,568);
-    this.load.spritesheet('flappy','assets/flappy.png',32,32);
+    this.load.spritesheet('flappy','assets/flappy.png',46,64);
+    this.load.spritesheet('sign','assets/sign.png',46,64);
 
-    this.load.image('sign','assets/sign.png');
     this.load.image('button','assets/button.png');
     this.load.image('pipetop','assets/pipetop.gif');
 

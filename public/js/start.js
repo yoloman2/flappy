@@ -20,31 +20,28 @@ Flappy.Start.prototype = {
 
     this.background = this.add.tileSprite(0,0,320,568,"background");
     this.background.autoScroll(-50,0);
-    this.background.animations.add('bganim');
-    this.background.animations.play('bganim',20,true);
 
     this.button = this.game.add.button(this.game.world.centerX, this.game.world.centerY+100,"button", this.start, this);
     this.button.anchor.set(0.5,0.5);
 
-    this.signbird = this.game.add.group();
-    this.sign = this.game.add.sprite(0,0,'sign');
-    this.signbird.add(this.sign);
+    this.sign = this.game.add.sprite(this.game.world.centerX, this.game.world.height/4,'sign');
+    this.sign.anchor.set(0.5);
+    this.sign.scale.set(2);
 
-    this.flappy = this.game.add.sprite(this.sign.width + 10, this.sign.height/2, "flappy");
-    this.flappy.anchor.set(0,0.5);
-    this.signbird.add(this.flappy);
-    //this.signbird.animations.add('flap');
-    //this.flappy.animations.play('flap', 12, true);
-    //
-    this.signbird.x = this.game.world.centerX - this.signbird.width/2;
-    this.signbird.y = 120
-
-    this.game.add.tween(this.signbird).to({y:this.signbird.y+10},350, Phaser.Easing.Linear.NONE,true,0,1000,true);
+    this.game.add.tween(this.sign).to({y:this.sign.y+10},350, Phaser.Easing.Linear.NONE,true,0,2000,true);
   },
 
   start: function () {
     this.startSound.stop();
     this.game.state.start('play');
+  },
+
+  update: function () {
+    if (this.sign.deltaY < 0) {
+      this.sign.frame = 0;
+    } else {
+      this.sign.frame = 1;
+    }
   }
 
 };
