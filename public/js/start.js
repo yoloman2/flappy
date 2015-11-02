@@ -46,14 +46,14 @@ Flappy.Start.prototype = {
 
     var highScoreKey = this.config.highscore.key || 'skilstak-flappy-highscore';
     var highScore = localStorage.getItem(highScoreKey) || Flappy.highScore;
+    var highScoreText = this.config.highscore.text || 'High Score: ';
     if (highScore) {
       this.high = this.game.add.text(this.game.world.centerX,
                                      this.game.world.centerY + 
                                      this.config.highscore.offset, 
-                                      this.config.highscore.text + 
-                                      Flappy.highScore,
-                                      this.config.highscore.style ||
-                                      this.config.score.style);
+                                     highScoreText + highScore,
+                                     this.config.highscore.style ||
+                                     this.config.score.style);
       this.high.anchor.set(0.5);
     }
   },

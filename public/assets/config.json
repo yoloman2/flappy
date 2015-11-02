@@ -56,7 +56,7 @@
     }
   },
   "highscore": {
-    "text": "Local High Score: ",
+    "text": "High Score: ",
     "offset": 250,
     "key": "skilstak-flappy-highscore",
     "style": {
