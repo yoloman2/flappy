@@ -37,6 +37,9 @@ Flappy.End.prototype = {
                                         score,
                                         this.config.gameover.score.style);
     this.scoretext.anchor.set(0.5,0.5);
+
+    Flappy.drawHighScore(this);
+
     game.input.onDown.add(this.start, this);
     game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR).onDown.add(this.start, this);
     this.gameoverSound = this.game.add.audio('gameover');
