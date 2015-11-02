@@ -14,6 +14,7 @@ Flappy.Start.prototype = {
   },
 
   create: function () {
+    Flappy.highScore = localStorage.getItem('skilstak-flappy-highscore');
     this.startSound = this.game.add.audio('start');
     this.startSound.play();
 
@@ -39,6 +40,21 @@ Flappy.Start.prototype = {
     if (this.config.sign.animation) {
       var anim = this.sign.animations.add('main');
       this.sign.animations.play('main',this.config.sign.animation.rate,true)
+    }
+
+
+
+    var highScoreKey = this.config.highscore.key || 'skilstak-flappy-highscore';
+    var highScore = localStorage.getItem(highScoreKey) || Flappy.highScore;
+    if (highScore) {
+      this.high = this.game.add.text(this.game.world.centerX,
+                                     this.game.world.centerY + 
+                                     this.config.highscore.offset, 
+                                      this.config.highscore.text + 
+                                      Flappy.highScore,
+                                      this.config.highscore.style ||
+                                      this.config.score.style);
+      this.high.anchor.set(0.5);
     }
   },
 

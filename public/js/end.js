@@ -27,6 +27,10 @@ Flappy.End.prototype = {
     this.gameover.anchor.set(0.5,0.5);
 
     var score = this.game.state.states.play.score;
+    if (score > Flappy.highScore) {
+      console.log("setting to " + score);
+      localStorage.setItem('skilstak-flappy-highscore', score);
+    }
     if (score < 0) {score = 0};
     this.scoretext = this.game.add.text(this.game.world.centerX,
                                         this.game.world.centerY + 70,

@@ -19,7 +19,7 @@
         "velocity": -420,
         "frame": 0,
         "rotate": -40,
-        "norotate": false
+        "norotate": true
       },
       "end": {
         "offset": 100,
@@ -54,6 +54,16 @@
       "font": "80px sans-serif",
       "fill": "#fdf6e3"
     }
+  },
+  "highscore": {
+    "text": "Local High Score: ",
+    "offset": 250,
+    "key": "skilstak-flappy-highscore",
+    "style": {
+      "font": "25px sans-serif", 
+      "fill": "#657b83",
+      "align": "center"
+    } 
   },
   "gameover": {
     "text": "Game\nOver",

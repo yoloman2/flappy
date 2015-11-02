@@ -2,6 +2,7 @@
 
 'use strict';
 
+
 var Flappy = {
   score: 0
 };
