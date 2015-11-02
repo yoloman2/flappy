@@ -16,7 +16,7 @@
       "scale": 1,
       "gravity": 1200,
       "flap": {
-        "velocity": -470,
+        "velocity": -420,
         "frame": 0,
         "rotate": -40,
         "norotate": false
@@ -42,7 +42,7 @@
   "pipe": {
     "width": 90,
     "height": 500,
-    "space": 175,
+    "space": 180,
     "offset": 120,
     "speed": 120,
     "interval": 2500,
