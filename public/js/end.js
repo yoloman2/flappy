@@ -7,21 +7,31 @@ Flappy.End = function () {};
 Flappy.End.prototype = {
 
   create: function () {
-    this.logo = this.add.sprite(this.game.world.centerX, this.game.world.height - 80, 'logo');
-    this.logo.anchor.set(0.5);
-    this.logo.frame = 1;
+    this.config = this.cache.getJSON('config');
+    var fy = this.game.world.centerY + this.config.flappy.end.offset;
+    this.flappy = this.add.sprite(this.game.world.centerX,fy,'flappy');
+    this.flappy.anchor.set(0.5);
+    this.flappy.frame = 1;
 
-    this.game.add.tween(this.logo).to({y:this.game.world.height+50}, 700).start();
-    this.game.add.tween(this.logo).to({angle:90},1000).start();
+    this.game.add.tween(this.flappy).to({y: this.game.world.height+
+            this.flappy.width/2}, this.config.flappy.end.duration).start();
+    this.game.add.tween(this.flappy).to({angle:90},
+                        this.config.flappy.end.duration).start();
 
-    var gameoverStyle = { font: "100px sans-serif", fill: "#b58900", align: "center" }; 
-    this.gameover = this.game.add.text(this.game.world.centerX, this.game.world.centerY - 150, "Game\nOver", gameoverStyle);
+    var gameoverStyle = this.config.gameover.style;
+    this.gameover = this.game.add.text(this.game.world.centerX,
+                                       this.game.world.centerY +
+                                       this.config.gameover.offset,
+                                       this.config.gameover.text,
+                                       gameoverStyle);
     this.gameover.anchor.set(0.5,0.5);
 
     var score = this.game.state.states.play.score;
-    var gameoverStyle = { font: "100px sans-serif", fill: "#fdf6e3", align: "center" }; 
     if (score < 0) {score = 0};
-    this.scoretext = this.game.add.text(this.game.world.centerX, this.game.world.centerY + 70, score, gameoverStyle);
+    this.scoretext = this.game.add.text(this.game.world.centerX,
+                                        this.game.world.centerY + 70,
+                                        score,
+                                        this.config.gameover.score.style);
     this.scoretext.anchor.set(0.5,0.5);
     game.input.onDown.add(this.start, this);
     game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR).onDown.add(this.start, this);

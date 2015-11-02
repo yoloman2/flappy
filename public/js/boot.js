@@ -18,11 +18,12 @@ Flappy.Boot.prototype = {
   },
 
   preload: function () {
-    this.game.load.spritesheet('logo','assets/logo.png',46,64);
+    this.game.load.json('config','assets/config.json');
+    this.game.load.spritesheet('skilstak','assets/skilstak.png', 46,64);
   },
 
   create: function () {
-    this.game.stage.backgroundColor = '#073642';
+    this.game.stage.backgroundColor = "#073642";
     this.game.state.start('preload');
   }
 

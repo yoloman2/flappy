@@ -3,10 +3,13 @@
 'use strict';
 
 var Pipe = function (game, x, y, parent, offset, space) {
+  this.config = game.cache.getJSON('config');
   Phaser.Group.call(this, game, parent);
 
-  this.offset = offset || 120;
-  this.space = space || 170;
+  this.speed = this.config.pipe.speed || 120;
+
+  this.offset = offset || this.config.pipe.offset || 120;
+  this.space = space || this.config.pipe.space || 175;
 
   if (game.cache.checkImageKey('pipetop')) {
     this.topimg = 'pipetop';
@@ -34,10 +37,10 @@ Pipe.prototype = Object.create(Phaser.Group.prototype);
 Pipe.prototype.constructor = Pipe;
 
 Pipe.prototype.drawOne = function (width, height) {
-  width = width || 90;
-  height = height || 500;
+  width = width || this.config.pipe.width || 90;
+  height = height || this.config.pipe.height || 500;
   var one = this.game.add.bitmapData(width,height);
-  one.ctx.fillStyle = '#586e75';
+  one.ctx.fillStyle = this.config.pipe.color || '#586e75';
   one.ctx.fillRect(0,0,width,height);
   return one;
 };
@@ -60,7 +63,7 @@ Pipe.prototype.reset = function (x,y) {
   this.bot.reset(_x, this.space/2);
   this.x = x || game.world.width + this.width;
   this.y = y || this.randomY();
-  this.setAll('body.velocity.x', -120);
+  this.setAll('body.velocity.x', -this.speed);
   this.exists = true;
   this.scored = false;
 };

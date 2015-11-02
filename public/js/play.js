@@ -2,13 +2,12 @@
 
 'use strict';
 
-var Flappy = Flappy || {};
-
 Flappy.Play = function () {};
 
 Flappy.Play.prototype = {
 
   init: function () {
+    this.config = game.cache.getJSON('config');
     this.background = null;
     this.flappy = null;
     this.pipes = null;
@@ -18,16 +17,20 @@ Flappy.Play.prototype = {
   },
 
   create: function () {
-    this.background = this.add.tileSprite(0,0,320,568,"background");
-    this.background.autoScroll(-50,0);
+    this.background = this.add.tileSprite(0,0,
+                        this.config.width,this.config.height,
+                        "background");
+    this.background.autoScroll(this.config.bg.scroll,0);
     this.playMusic = this.game.add.audio('play');
     this.pointSound = this.game.add.audio('point');
     this.crashSound = this.game.add.audio('crash');
     this.playMusic.play();
     this.flappy = new Flapper(this.game);
-    this.timer = this.game.time.events.loop(2500, this.addPipe, this);           
-    var scoreTextStyle = { font: "80px sans-serif", fill: "#fdf6e3" }; 
-    this.scoreText = this.game.add.text(this.game.world.centerX, 55, "0", scoreTextStyle);
+    this.timer = this.game.time.events.loop(this.config.pipe.interval,
+                                            this.addPipe, this);           
+    var scoreTextStyle = this.config.score.style;
+    this.scoreText = this.game.add.text(this.game.world.centerX,
+                                        this.config.score.y, "0", scoreTextStyle);
     this.scoreText.anchor.set(0.5);
     this.pipes = this.game.add.group();
   },
@@ -58,7 +61,7 @@ Flappy.Play.prototype = {
     this.crashSound.play();
     this.playMusic.stop();
     this.game.state.start('end');
-  },
+  }
 
 };
 

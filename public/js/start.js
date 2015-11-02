@@ -2,13 +2,12 @@
 
 'use strict';
 
-var Flappy = Flappy || {};
-
 Flappy.Start = function () {};
 
 Flappy.Start.prototype = {
 
   init: function () {
+    this.config = game.cache.getJSON('config');
     this.background = null;
     this.flappy = null;
     this.button = null;
@@ -18,16 +17,29 @@ Flappy.Start.prototype = {
     this.startSound = this.game.add.audio('start');
     this.startSound.play();
 
-    this.background = this.add.tileSprite(0,0,320,568,"background");
-    this.background.autoScroll(-50,0);
+    this.background = this.add.tileSprite(0,0,
+                        this.config.width,this.config.height,"background");
+    this.background.autoScroll(this.config.bg.scroll,0);
 
-    this.button = this.game.add.button(this.game.world.centerX, this.game.world.centerY+100,"button", this.start, this);
+    this.button = this.game.add.button(this.game.world.centerX,
+                                       this.game.world.centerY +
+                                         this.config.button.offset,
+                                       "button", this.start, this);
     this.button.anchor.set(0.5,0.5);
 
-    this.sign = this.game.add.sprite(this.game.world.centerX, this.game.world.height/4,'sign');
+    this.sign = this.game.add.sprite(this.game.world.centerX,
+                                     this.game.world.centerY +
+                                     this.config.sign.offset,'sign');
     this.sign.anchor.set(0.5);
 
-    this.game.add.tween(this.sign).to({y:this.sign.y+50},474, Phaser.Easing.Linear.NONE,true,0,2000,true);
+    this.game.add.tween(this.sign).to({y:this.sign.y+50},
+                                      this.config.sign.speed,
+                                      Phaser.Easing.Linear.NONE,
+                                      true,0,2000,true);
+    if (this.config.sign.animation) {
+      var anim = this.sign.animations.add('main');
+      this.sign.animations.play('main',this.config.sign.animation.rate,true)
+    }
   },
 
   start: function () {
@@ -36,10 +48,12 @@ Flappy.Start.prototype = {
   },
 
   update: function () {
-    if (this.sign.deltaY < 0) {
-      this.sign.frame = 0;
-    } else {
-      this.sign.frame = 1;
+    if (this.config.sign.twoframe) {
+      if (this.sign.deltaY < 0) {
+        this.sign.frame = 0;
+      } else {
+        this.sign.frame = 1;
+      }
     }
   }
 
