@@ -9,11 +9,11 @@ Flappy.Preload.prototype = {
   preload: function () {
     this.config = game.cache.getJSON('config');
 
-    this.logo = this.add.sprite(
+    this.skilstak = this.add.sprite(
         this.game.world.centerX, this.game.world.centerY, 'skilstak');
-    this.logo.anchor.set(0.5);
-    this.logo.animations.add('blink');
-    this.logo.play('blink',2,true);
+    this.skilstak.anchor.set(0.5);
+    this.skilstak.animations.add('blink');
+    this.skilstak.play('blink',2,true);
     
     var style = {
       font: "30px sans-serif",
