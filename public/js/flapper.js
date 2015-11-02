@@ -42,7 +42,8 @@ Flapper.prototype.update = function () {
       this.angle += 2.5;
     }
   }
-  if (! this.config.flappy.animation.rate) {
+  if (! this.config.flappy.animation ||
+      ! this.config.flappy.animation.rate) {
     if (this.deltaY < 0) {
       this.frame = this.config.flappy.flap.frame || 0;
     } else {
