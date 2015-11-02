@@ -42,8 +42,8 @@
   "pipe": {
     "width": 90,
     "height": 500,
-    "space": 120,
-    "offset": 175,
+    "space": 175,
+    "offset": 120,
     "speed": 120,
     "interval": 2500,
     "color": "#586e75"
