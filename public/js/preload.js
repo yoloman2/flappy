@@ -48,6 +48,8 @@ Flappy.Preload.prototype = {
   },
 
   create: function () {
+    // even though we don't play these in this state we need
+    // them to ensure they've been decoded
     this.loading.text = "Decoding...";
     var start = this.game.add.audio('start',null,true);
     var flap = this.game.add.audio('flap');

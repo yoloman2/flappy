@@ -21,7 +21,7 @@ Flappy.Play.prototype = {
                         this.config.width,this.config.height,
                         "background");
     this.background.autoScroll(this.config.bg.scroll,0);
-    this.playMusic = this.game.add.audio('play');
+    this.playMusic = this.game.add.audio('play',null,true);
     this.pointSound = this.game.add.audio('point');
     this.crashSound = this.game.add.audio('crash');
     this.playMusic.play();

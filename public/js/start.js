@@ -15,7 +15,7 @@ Flappy.Start.prototype = {
 
   create: function () {
     Flappy.highScore = localStorage.getItem('skilstak-flappy-highscore');
-    this.startSound = this.game.add.audio('start');
+    this.startSound = this.game.add.audio('start',null,true);
     this.startSound.play();
 
     this.background = this.add.tileSprite(0,0,
