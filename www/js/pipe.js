@@ -12,8 +12,8 @@ var Pipe = function (game, x, y, parent, offset, space) {
   this.space = space || this.config.pipe.space || 175;
 
   if (game.cache.checkImageKey('pipetop')) {
-    this.topimg = game.cache.getImage('pipetop');
-    this.botimg = game.cache.getImage('pipebot');
+    this.topimg = 'pipetop';
+    this.botimg = 'pipebot';
   } else {
     this.topimg = this.drawOne();
     this.botimg = this.drawOne();
