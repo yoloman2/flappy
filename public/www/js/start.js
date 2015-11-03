@@ -35,21 +35,18 @@ Flappy.Start.prototype = {
 
     this.background = this.add.tileSprite(0,0,
                         this.config.width,this.config.height,"background");
-    this.background.autoScroll(this.config.bg.scroll || -50,0);
-    this.background.scale.set(this.config.bg.scale || 1);
+    this.background.autoScroll(this.config.bg.scroll,0);
 
     this.button = this.game.add.button(this.game.world.centerX,
                                        this.game.world.centerY +
                                          this.config.button.offset,
                                        "button", this.start, this);
     this.button.anchor.set(0.5,0.5);
-    this.button.scale.set(this.config.button.scale || 1);
 
     this.sign = this.game.add.sprite(this.game.world.centerX,
                                      this.game.world.centerY +
                                      this.config.sign.offset,'sign');
     this.sign.anchor.set(0.5);
-    this.sign.scale.set(this.config.sign.scale || 1);
 
     this.game.add.tween(this.sign).to({y:this.sign.y+50},
                                       this.config.sign.speed,

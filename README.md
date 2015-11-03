@@ -1,4 +1,4 @@
-# Flappy Game Template (HTML5-PHSC)
+# Flappy HTML5 Phaser Game Template
 
 Use this template to assemble your own game like Flappy Bird. Then, as
 you learn more code, customize it to your liking.
@@ -25,24 +25,24 @@ create the art in the proper dimensions, which you can find in the
 directory. [PiskelApp.com][] is a great tool to create your game
 art.
 
-## Using the HTML5-PHSC Stack
+## Our Stack
 
 What is HTML5? It is the modern language used to create web pages
 including those with moving parts and games. If you have heard of
 Flash games then just know HTML5 has replaced Flash for pretty much
 anything like it on the web.
 
-PHSC is an acronym we use at SkilStak to refer to any HTML5 game
-created using the following awesome technologies:
+* [Phaser.io][] - HTML5 JavaScript Game Framework based on Pixi 
+* [Harp][] - No nonsense web server and site generation tool
+* [Surge.sh][] - Free unlimited static web site hosting
+* [PhoneGap][]\* - Free open source app builds
 
-* [Phaser.io][]
-* [Harp][]
-* [Surge.sh][]
-* [CocoonJS][]
+\* While we would prefer to use CocoonJS it is still not baked enough to
+teach broadly and simply to students 8-18 years old.
 
 [Phaser.io]: http://phaser.io
 [Harp]: http://harpjs.com
 [Surge.sh]: http://surge.sh
-[CocoonJS]: https://www.ludei.com/cocoonjs/
+[PhoneGap]: http://build.phonegap.com
 [PiskelApp.com]: https://piskelapp.com
 

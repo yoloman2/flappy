@@ -4,12 +4,10 @@
   "bg": {
     "width": 960,
     "height": 568,
-    "scale": 1,
     "scroll": -50
   },
   "button": {
-    "offset": 100,
-    "scale": 1
+    "offset": 100
   },
   "flappy": {
       "x": 60,
@@ -25,8 +23,7 @@
       },
       "end": {
         "offset": 100,
-        "duration": 700,
-        "scale": 1
+        "duration": 700
       },
       "animation": {
         "rate": 0 
@@ -35,7 +32,6 @@
   "sign": {
       "width": 46,
       "height": 64,
-      "scale": 1,
       "offset": -200,
       "speed": 474,
       "twoframe": true,
