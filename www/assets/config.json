@@ -47,10 +47,9 @@
     "width": 90,
     "height": 500,
     "space": 180,
-    "offset": 120,
-    "speed": 120,
-    "interval": 2500,
-    "color": "#586e75"
+    "offset": 160,
+    "speed": 170,
+    "interval": 1800 
   },
   "score": {
     "y": 55,

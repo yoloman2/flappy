@@ -47,9 +47,9 @@
     "width": 90,
     "height": 500,
     "space": 180,
-    "offset": 160,
+    "offset": 150,
     "speed": 170,
-    "interval": 1800 
+    "interval": 1700 
   },
   "score": {
     "y": 55,
