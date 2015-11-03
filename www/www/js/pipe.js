@@ -11,13 +11,18 @@ var Pipe = function (game, x, y, parent, offset, space) {
   this.offset = offset || this.config.pipe.offset || 120;
   this.space = space || this.config.pipe.space || 175;
 
-  this.topimg = game.cache.getImage('pipetop');
-  this.botimg = game.cache.getImage('pipebot');
-  
+  if (game.cache.checkImageKey('pipetop')) {
+    this.topimg = game.cache.getImage('pipetop');
+    this.botimg = game.cache.getImage('pipebot');
+  } else {
+    this.topimg = this.drawOne();
+    this.botimg = this.drawOne();
+  }
+
   this.dieAt = -game.world.width - (this.topimg.width*2);
 
-  this.top = game.add.sprite(0,0,'pipetop');
-  this.bot = game.add.sprite(0,0,'pipebot');
+  this.top = game.add.sprite(0,0,this.topimg);
+  this.bot = game.add.sprite(0,0,this.botimg);
 
   game.physics.arcade.enableBody(this.top);
   game.physics.arcade.enableBody(this.bot);
@@ -30,6 +35,15 @@ var Pipe = function (game, x, y, parent, offset, space) {
 
 Pipe.prototype = Object.create(Phaser.Group.prototype);
 Pipe.prototype.constructor = Pipe;
+
+Pipe.prototype.drawOne = function (width, height) {
+  width = width || this.config.pipe.width || 90;
+  height = height || this.config.pipe.height || 500;
+  var one = this.game.add.bitmapData(width,height);
+  one.ctx.fillStyle = this.config.pipe.color || '#586e75';
+  one.ctx.fillRect(0,0,width,height);
+  return one;
+};
 
 Pipe.prototype.randomY = function () {
   var offset = game.rnd.integerInRange(-this.offset, this.offset);

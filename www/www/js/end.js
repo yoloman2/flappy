@@ -12,7 +12,6 @@ Flappy.End.prototype = {
     this.flappy = this.add.sprite(this.game.world.centerX,fy,'flappy');
     this.flappy.anchor.set(0.5);
     this.flappy.frame = 1;
-    this.flappy.scale.set(this.config.flappy.end.scale || 1);
 
     this.game.add.tween(this.flappy).to({y: this.game.world.height+
             this.flappy.width/2}, this.config.flappy.end.duration).start();
@@ -29,6 +28,7 @@ Flappy.End.prototype = {
 
     var score = this.game.state.states.play.score;
     if (score > Flappy.highScore) {
+      console.log("setting to " + score);
       localStorage.setItem('skilstak-flappy-highscore', score);
     }
     if (score < 0) {score = 0};
