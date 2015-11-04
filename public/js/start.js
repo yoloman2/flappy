@@ -29,7 +29,7 @@ Flappy.Start.prototype = {
   },
 
   create: function () {
-    Flappy.highScore = localStorage.getItem('skilstak-flappy-highscore');
+    Flappy.highScore = localStorage.getItem(this.config.highscore.key);
     this.startSound = this.game.add.audio('start',1,true);
     this.startSound.play();
 
