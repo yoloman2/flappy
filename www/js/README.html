@@ -1,0 +1,27 @@
+<h1>JavaScript</h1><p>We use the Phaser engine and organize the JavaScript into states
+and objects, (which some call prefabs*). This organization follows
+the standard set forth in the Interphase book as opposed to the
+many tutorials and some other examples out there. The <code>boot</code> and
+<code>preload</code> states are particularly important (and absent from about
+every other tutorial out there) and should be included in every
+Phaser game.  Without them games will lag horribly while assets are
+loaded and decoded during the beginning of game play.</p>
+<p>States:</p>
+<ul>
+<li><code>boot.js</code> - the first state to run</li>
+<li><code>preload.js</code> - loading assets and decoding sound</li>
+<li><code>start.js</code> - start state, push play, high score</li>
+<li><code>play.js</code> - main play state</li>
+<li><code>end.js</code> - game over state, high score</li>
+</ul>
+<p>Objects:</p>
+<ul>
+<li><code>flapper.js</code> - the flapping thingy</li>
+<li><code>pipe.js</code> - the pipe, composed of top and bottom sprites</li>
+</ul>
+<p>Note that we use the full <code>phaser.js</code> instead of <code>phaser.min.js</code>
+so that we can debug better and get an insider look at how phaser
+works.  In a production game students could swap this out, but it
+isn&#39;t really necessary.</p>
+<p>* Note: I hate the name &#39;prefab&#39; used by some. They are JavaScript
+objects. No need for a new name.</p>
