@@ -7,7 +7,7 @@ var Flapper = function(game) {
   Phaser.Sprite.call(this, game, this.config.flappy.x, game.world.centerY, 'flappy',1);
   this.smoothed = false;
   this.checkWorldBounds = true;
-  this.outOfBoundsKill = true;
+  this.outOfBoundsKill = this.config.flappy.outkill ||true;
   this.scale.set(this.config.flappy.scale || 1);
   this.anchor.set(0.5);
   game.physics.arcade.enable(this);
