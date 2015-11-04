@@ -17,6 +17,7 @@
       "height": 64,
       "scale": 1,
       "gravity": 1200,
+      "outkill": true,
       "flap": {
         "velocity": -420,
         "frame": 0,

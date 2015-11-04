@@ -3,27 +3,57 @@
 Use this template to assemble your own game like Flappy Bird. Then, as
 you learn more code, customize it to your liking.
 
-## Fork
+## How to Use
 
-First fork this repo so you have one of your own:
+1. Fork
+2. Clone
+3. Change
+4. Commit
+5. Push
 
-TODO animated gif
+## Customize Assets
 
-## Clone
+To add your own art replace files in [`public/assets`](public/assets).
+[PiskelApp.com][] is a great tool to create your game art. As a
+rule just use PNG image files. **Remember to keep the same names
+as the files in the `assets` directory.**
 
-Now clone it someplace you can work on it. For most at SkilStak this
-will be `skilstak.sh` but you could clone it to your own computer as
-well:
+## Change Game Settings
 
-TODO animated gif
+Don't forget to update the sizes in `public/assets/config.json` if
+your images are not the same dimensions. You can also change the
+height and width of the whole game and other settings such as pipe
+speed, spacing and offset from center.
 
-## Add Your Art
+## Change CNAME
 
-This template does not come with any art. To add your own simply
-create the art in the proper dimensions, which you can find in the
-[source code](public/js), and save it in [`public\assets`](public/assets)
-directory. [PiskelApp.com][] is a great tool to create your game
-art.
+To public your game to surge.sh change the `public/CNAME` file to
+contain your site name. If you do not have a custom domain with Surge
+(one is free) then you will have to make sure the domain ends in
+`surge.sh`.
+
+## Pre-Commit Sym Link
+
+The `pre-commit` script can be linked to `harp compile` and `surge
+www` your game site automatically when do a `save`:
+
+```sh
+ln -fs ../../pre-commit .git/hooks/pre-commit
+```
+
+The `save` command we use is just a small shell script with the
+following:
+
+```sh
+#!/bin/sh
+
+comment=save
+[ ! -z "$*" ] && comment="$*"
+git pull
+git add -A .
+git commit -a -m "$comment"
+git push
+```
 
 ## Our Stack
 
