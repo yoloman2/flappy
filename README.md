@@ -21,6 +21,10 @@ software released into the public domain.
 
 ## Image Asset Dimensions
 
+The easiest way to customize these assets is to import them directly
+into [Piskel](http://piskelapp.com) and alter them there. That way the
+dimensions are ensured to be the right ones.
+
 * [`background.png`](assets/background.png) - 960 x 568 (3x game width so scrolls)
 * [`button.png`](assets/button.png) - whatever
 * [`flappy.png`](assets/flappy.png) - 46 x 64 (2 frames)
