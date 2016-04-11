@@ -40,12 +40,13 @@ software released into the public domain.
 
 ## Hacking the Script
 
-If you have your game working and want a fun challenge. Download
-a local copy of [`skilstak-flappy.js`](skilstak-flappy.js) and mess
-with the `CONFIG` settings at the top. **DO NOT TRY TO OPEN THE SCRIPT
-IN GITHUB USING THE EDITOR THERE.** It is too big and will crash your
-chrome window. This is because it includes a full copy of
-[Phaser](http://phaser.io) for convenient dragging and dropping.
+If you have loaded your own assets and got your game working and
+want a fun challenge. Download a local copy of
+[`skilstak-flappy.js`](skilstak-flappy.js) and mess with the `CONFIG`
+settings at the top. **DO NOT TRY TO OPEN THE SCRIPT IN GITHUB USING
+THE EDITOR THERE.** It is too big and will crash your chrome window.
+This is because it includes a full copy of [Phaser](http://phaser.io)
+for convenient dragging and dropping.
 
 Remember, if you really break something bad, you can always [get the
 original script](skilstak-flappy.js) again and drag it in.
