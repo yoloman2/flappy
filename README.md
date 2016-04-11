@@ -2,10 +2,11 @@
 
 Fork or just copy the `index.html` and `skilstak-flappy.js` into
 your own `gh-pages` repo or main `<you>.github.io/flappy` site. The
-easiest way to download these files (you can't drag and drop) is
-to right-click on the *Raw* button and `Save Link As` the same name
-or  just [download a zip of the whole game including the
-assets](https://github.com/skilstak/flappy/archive/gh-pages.zip).
+easiest way to download these files is to just [download a zip of
+the whole game including the
+assets](https://github.com/skilstak/flappy/archive/gh-pages.zip)
+and then drag and drop the ones you want to reuse into your own
+game site.
 
 Don't forget to make your own [`assets`](assets/) as well. **If you
 are missing any asset or it is the wrong dimensions or wrong number
