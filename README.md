@@ -9,6 +9,25 @@ the beginning of the skilstak-flappy.js file, but be careful not to
 break it and check for syntax errors.
 This is free and unencumbered software released into the public domain.
 
+## Image Asset Dimensions
+
+* `background.png` - 960 x 568 (3x game width so scrolls)
+* `button.png` - whatever
+* `flappy.png` - 46 x 64 (2 frames)
+* `pipebot.png` - 90 x 500
+* `pipetop.png` - 90 x 500
+* `sign.png` - 46 x 64 (2 frames)
+* `skilstak.png`
+
+## Sound Assets
+
+* `gameover.wav`
+* `point.wav`
+* `start.mp3`
+* `flap.wav`
+* `crash.wav`
+* `play.mp3`
+
 ## PUBLIC DOMAIN LICENSE
 
 Anyone is free to copy, modify, publish, use, compile, sell, or
