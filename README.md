@@ -22,7 +22,7 @@ software released into the public domain.
 * [`pipebot.png`](assets/pipebot.png) - 90 x 500
 * [`pipetop.png`](assets/pipetop.png) - 90 x 500
 * [`sign.png`](assets/sign.png) - 46 x 64 (2 frames)
-* [`skilstak.png` - copy exactly from boilerplate](assets/skilstak.png)
+* [`skilstak.png` - copy exactly from boilerplate, required](assets/skilstak.png)
 
 ## Sound Assets
 
