@@ -30,6 +30,15 @@ software released into the public domain.
 * `crash.wav`
 * `play.mp3`
 
+## Hacking the Script
+
+If you have your game working and want a fun challenge. Download
+a local copy of [`skilstak-flappy.js`](skilstak-flappy.js) and mess
+with the `CONFIG` settings at the top. **DO NOT TRY TO OPEN THE SCRIPT
+IN GITHUB USING THE EDITOR THERE.** It is too big and will crash your
+chrome window. This is because it includes a full copy of
+[Phaser](http://phaser.io) for convenient dragging and dropping.
+
 ## PUBLIC DOMAIN LICENSE
 
 Anyone is free to copy, modify, publish, use, compile, sell, or
