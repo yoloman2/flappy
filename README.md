@@ -1,10 +1,13 @@
 # SkilStak Flappy Boilerplate
 
 Fork or just copy the `index.html` and `skilstak-flappy.js` into your
-own `gh-pages` repo or main `<you>.github.io` site. Don't forget to
-make your own [`assets`](assets/). **If you are missing any asset or
-it is the wrong dimensions or wrong number of frames your game won't
-work (without hacking the script).**
+own `gh-pages` repo or main `<you>.github.io` site. The easiest way to
+download these files (you can't drag and drop) is to right-click on
+the *Raw* button and `Save Link As` the same name.
+
+Don't forget to make your own [`assets`](assets/) as well. **If you
+are missing any asset or it is the wrong dimensions or wrong number
+of frames your game won't work (without hacking the script).**
 
 Experiment with "hacking" the game by changing the CONFIG settings
 at the beginning of the skilstak-flappy.js file, but be careful not
@@ -38,6 +41,9 @@ with the `CONFIG` settings at the top. **DO NOT TRY TO OPEN THE SCRIPT
 IN GITHUB USING THE EDITOR THERE.** It is too big and will crash your
 chrome window. This is because it includes a full copy of
 [Phaser](http://phaser.io) for convenient dragging and dropping.
+
+Remember, if you really break something bad, you can always [get the
+original script](skilstak-flappy.js) again and drag it in.
 
 ## PUBLIC DOMAIN LICENSE
 
