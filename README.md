@@ -1,8 +1,10 @@
 # SkilStak Flappy Boilerplate
 
-Fork or just copy the `index.html` and `skilstak-flappy.js` into
-your own `gh-pages` repo or main `<you>.github.io/flappy` site. The
-easiest way to download these files is to just [download a zip of
+First make your own flappy-ish game directory in your `<you>.github.io`
+repo. (If you know how to do it a more complicated way you can also
+create a separate repo with a default `gh-pages` branch.)
+
+Then download these files is to just [download a zip of
 the whole game including the
 assets](https://github.com/skilstak/flappy/archive/gh-pages.zip)
 and then drag and drop the ones you want to reuse into your own
