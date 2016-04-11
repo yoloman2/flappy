@@ -1,0 +1,88 @@
+{
+  "width": 320,
+  "height": 568,
+  "bg": {
+    "width": 960,
+    "height": 568,
+    "scale": 1,
+    "scroll": -50
+  },
+  "button": {
+    "offset": 100,
+    "scale": 1
+  },
+  "flappy": {
+      "x": 60,
+      "width": 46,
+      "height": 64,
+      "scale": 1,
+      "gravity": 1200,
+      "outkill": true,
+      "flap": {
+        "velocity": -420,
+        "frame": 0,
+        "rotate": -40,
+        "norotate": true
+      },
+      "end": {
+        "offset": 100,
+        "duration": 700,
+        "scale": 1
+      },
+      "animation": {
+        "rate": 0 
+      }
+  },
+  "sign": {
+      "width": 46,
+      "height": 64,
+      "scale": 1,
+      "offset": -200,
+      "speed": 474,
+      "twoframe": true,
+      "animation": {
+        "rate": 0 
+      }
+  },
+  "pipe": {
+    "width": 90,
+    "height": 500,
+    "space": 180,
+    "offset": 150,
+    "speed": 170,
+    "interval": 1700 
+  },
+  "score": {
+    "y": 55,
+    "style": {
+      "font": "80px sans-serif",
+      "fill": "#fdf6e3"
+    }
+  },
+  "highscore": {
+    "text": "High Score: ",
+    "offset": 250,
+    "key": "skilstak-flappy-highscore",
+    "style": {
+      "font": "25px sans-serif", 
+      "fill": "#657b83",
+      "align": "center"
+    } 
+  },
+  "gameover": {
+    "text": "Game\nOver",
+    "offset": -150,
+    "style": {
+      "font": "100px sans-serif", 
+      "fill": "#b58900",
+      "align": "center"
+    }, 
+    "score": {
+      "style": {
+        "font": "100px sans-serif", 
+        "fill": "#fdf6e3",
+        "align": "center"
+      }
+    } 
+  }
+}
