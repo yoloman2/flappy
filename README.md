@@ -16,22 +16,22 @@ software released into the public domain.
 
 ## Image Asset Dimensions
 
-* `background.png` - 960 x 568 (3x game width so scrolls)
-* `button.png` - whatever
-* `flappy.png` - 46 x 64 (2 frames)
-* `pipebot.png` - 90 x 500
-* `pipetop.png` - 90 x 500
-* `sign.png` - 46 x 64 (2 frames)
-* `skilstak.png` - [copy exactly from boilerplate](assets/skilstak.png)
+* [`background.png`](assets/background.png) - 960 x 568 (3x game width so scrolls)
+* [`button.png`](assets/button.png) - whatever
+* [`flappy.png`](assets/flappy.png) - 46 x 64 (2 frames)
+* [`pipebot.png`](assets/pipebot.png) - 90 x 500
+* [`pipetop.png`](assets/pipetop.png) - 90 x 500
+* [`sign.png`](assets/sign.png) - 46 x 64 (2 frames)
+* [`skilstak.png` - copy exactly from boilerplate](assets/skilstak.png)
 
 ## Sound Assets
 
-* `gameover.wav`
-* `point.wav`
-* `start.mp3`
-* `flap.wav`
-* `crash.wav`
-* `play.mp3`
+* [`gameover.wav`](assets/gameover.wav)
+* [`point.wav`](assets/point.wav)
+* [`start.mp3`](assets/start.mp3)
+* [`flap.wav`](assets/flap.wav)
+* [`crash.wav`](assets/crash.wav)
+* [`play.mp3`](assets/play.mpe)
 
 ## Hacking the Script
 
