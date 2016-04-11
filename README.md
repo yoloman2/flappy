@@ -7,7 +7,9 @@ the *Raw* button and `Save Link As` the same name.
 
 Don't forget to make your own [`assets`](assets/) as well. **If you
 are missing any asset or it is the wrong dimensions or wrong number
-of frames your game won't work (without hacking the script).**
+of frames your game won't work (without hacking the script).** It
+might be easiest to just [download a zip of the whole game including
+the assets](https://github.com/skilstak/flappy/archive/gh-pages.zip).
 
 Experiment with "hacking" the game by changing the CONFIG settings
 at the beginning of the skilstak-flappy.js file, but be careful not
