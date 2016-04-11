@@ -1,7 +1,7 @@
 # SkilStak Flappy Boilerplate
 
 Fork or just copy the `index.html` and `skilstak-flappy.js` into your
-own `gh-pages` repo or main `<you>.github.io` site. The easiest way to
+own `gh-pages` repo or main `<you>.github.io/flappy` site. The easiest way to
 download these files (you can't drag and drop) is to right-click on
 the *Raw* button and `Save Link As` the same name.
 
