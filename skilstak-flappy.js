@@ -30,8 +30,7 @@ var CONFIG = {
         "scale": 1
       },
       "animation": {
-        "rate": 0,
-        "frames": 2 
+        "rate": 0 
       }
   },
   "sign": {
@@ -96450,10 +96449,8 @@ var Flapper = function(game) {
   game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR).onDown.add(this.flap, this);
   this.flapSound = this.game.add.audio('flap');
   if (this.config.flappy.animation) {
-    var frames = this.config.flappy.animation.frames || 2;
-    var rate = this.config.flappy.animation.rate || 1;
     var anim = this.animations.add('main');
-    this.animations.play('main',rate,true)
+    this.animations.play('main',this.config.flappy.animation.rate,true)
   }
   game.add.existing(this);
 };
