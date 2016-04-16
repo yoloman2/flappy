@@ -31,7 +31,7 @@ var CONFIG = {
       },
       "animation": {
         "rate": 0,
-        "frames": 3
+        "frames": 2
       }
   },
   "sign": {
