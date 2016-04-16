@@ -96452,7 +96452,7 @@ var Flapper = function(game) {
   if (this.config.flappy.animation) {
     var frames = this.config.flappy.animation.frames || 2;
     var rate = this.config.flappy.animation.rate || 1;
-    var anim = this.animations.add('main',frames);
+    var anim = this.animations.add('main');
     this.animations.play('main',rate,true)
   }
   game.add.existing(this);
