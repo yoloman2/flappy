@@ -30,7 +30,8 @@ var CONFIG = {
         "scale": 1
       },
       "animation": {
-        "rate": 0 
+        "rate": 0,
+        "frames": 2
       }
   },
   "sign": {
