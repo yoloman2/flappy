@@ -96450,7 +96450,8 @@ var Flapper = function(game) {
   game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR).onDown.add(this.flap, this);
   this.flapSound = this.game.add.audio('flap');
   if (this.config.flappy.animation) {
-    var anim = this.animations.add('main');
+    var frames = this.config.flappy.animation.frames;
+    var anim = this.animations.add('main',frames);
     this.animations.play('main',this.config.flappy.animation.rate,true)
   }
   game.add.existing(this);
